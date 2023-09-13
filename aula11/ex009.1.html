@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasileiro ou Estrangeiro?</title>
+    <style>
+        body {
+            background-color: darkgreen;
+            text: normal 18px Arial;
+            color: white 
+        }
+
+        #button {
+            background-color: goldenrod;
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>Brasileiro ou Estrangeiro?</h1>
+    <input type="text" name="mora" id="mora" placeholder="Onde mora?" >
+    <input type="text" name="nasceu" id="nasceu" placeholder="Onde nasceu?" >
+    <input id="button" type="button" value="Verificar" onclick="analisar()" >
+    <div id="resultado" ></div>
+
+    <script>
+        function analisar() {
+            var txtMora = window.document.getElementById('mora').value
+            var txtNasceu = window.document.getElementById('nasceu').value
+            var resultado = window.document.getElementById(`resultado`)
+                        
+            if (txtNasceu == "Brasil" || "brasil") {
+                resultado.innerHTML += `Você reside no ${txtMora} e é brasileiro(a)`
+            } else {
+                resultado.innerHTML += `Você reside no ${txtMora} e é estrangeiro(a)`
+            }
+        }
+    </script>
+</body>
+</html>
